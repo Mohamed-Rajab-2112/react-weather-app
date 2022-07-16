@@ -18,6 +18,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "indent": [
+      true,
+      "tabs",
+      1
+    ],
+    "baseUrl": "src",
     "jsx": "react-jsx"
   },
   "include": [
