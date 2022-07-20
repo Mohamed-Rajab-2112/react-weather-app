@@ -1,0 +1,18 @@
+@import 'theme/colors';
+@import 'theme/mixins';
+
+.Error {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	&__message {
+		color: $light;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	
+	&__retryButton {
+		@include button;
+	}
+}

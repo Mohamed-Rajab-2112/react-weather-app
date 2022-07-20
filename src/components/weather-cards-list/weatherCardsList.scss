@@ -1,0 +1,32 @@
+@import 'theme/breakpoints';
+@import 'theme/colors';
+
+.WeatherCardsList {
+	display: grid;
+	gap: 32px;
+	grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+	grid-template-rows: auto;
+	justify-items: start;
+	margin: 24px percentage(56/1280) 0;
+	padding-bottom: 100px;
+	
+	&__emptyState {
+		color: $light;
+		font-size: 12px;
+		font-weight: normal;
+		margin-top: 50px;
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.WeatherCardsList {
+		justify-items: center;
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.WeatherCardsList {
+		grid-template-columns: auto;
+		margin: 24px 20px 0;
+	}
+}

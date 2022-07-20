@@ -1,0 +1,26 @@
+@import 'theme/colors';
+
+@mixin button {
+	height: 40px;
+	border-radius: 100px;
+	text-align: center;
+	border: none;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+}
+
+@mixin primaryButton {
+	@include button;
+	background-color: $dark;
+	color: $light;
+}
+
+@mixin secondaryButton {
+	@include button;
+	background-color: $light;
+	color: $darkGrey;
+	border: 1px solid $semiLight;
+	
+}

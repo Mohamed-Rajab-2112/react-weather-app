@@ -1,0 +1,12 @@
+@import 'theme/colors';
+
+.Weather {
+	&__title {
+		color: $light;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 125%;
+		margin: 24px percentage(56/1280);
+	}
+}

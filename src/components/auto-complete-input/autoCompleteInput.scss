@@ -1,0 +1,74 @@
+@import 'theme/colors';
+@import 'theme/breakpoints';
+
+.AutoCompleteInput {
+	display: flex;
+	position: relative;
+	
+	&__searchInputContainer {
+		position: relative;
+	}
+	
+	&__searchInputLabel {
+		display: none;
+	}
+	
+	&__searchInput {
+		background-color: $mid;
+		border: none;
+		border-radius: 100px;
+		box-sizing: border-box;
+		color: $light;
+		height: 32px;
+		padding: 6px 40px 6px 40px;
+		width: 240px;
+		
+		&:focus-visible {
+			outline: none;
+		}
+	}
+	
+	::placeholder,
+	::-webkit-input-placeholder {
+		color: #d4dbe0;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%;
+	}
+	
+	&__searchIcon {
+		color: $light;
+		left: 13px;
+		position: absolute;
+		top: 8px;
+	}
+	
+	&__cancelButton {
+		color: $light;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		right: 13px;
+		top: 50%;
+		transform: translate(0, -50%);
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.AutoCompleteInput {
+		flex-direction: column;
+		
+		&__searchInput {
+			width: 200px;
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.AutoCompleteInput {
+		&__searchInput {
+			width: 250px;
+		}
+	}
+}

@@ -1,0 +1,79 @@
+@import 'theme/colors';
+@import 'theme/breakpoints';
+
+$checkedBoxColor: #1c4658;
+$uncheckedBoxColor: #93a5b1;
+
+.WeatherAttributeCheckbox {
+	align-items: center;
+	box-shadow: inset 0px -1px 0px $semiLight;
+	display: flex;
+	height: 40px;
+	margin: 0 32px;
+	
+	&:nth-child(3) {
+		border-radius: 4px;
+		padding-bottom: 8px;
+	}
+	
+	&__label {
+		color: $darkGrey;
+		cursor: pointer;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%;
+	}
+	
+	&__checkbox {
+		cursor: pointer;
+		margin-right: 11px;
+		position: relative;
+		
+		label {
+			background-color: $light;
+			border: 2px solid $uncheckedBoxColor;
+			border-radius: 50%;
+			cursor: pointer;
+			height: 18px;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 18px;
+			
+			&:after {
+				border: 2px solid $light;
+				border-right: none;
+				border-top: none;
+				content: '';
+				height: 5px;
+				left: 3px;
+				opacity: 0;
+				position: absolute;
+				top: 4px;
+				transform: rotate(-45deg);
+				width: 9px;
+			}
+		}
+		
+		input[type='checkbox'] {
+			visibility: hidden;
+			
+			&:checked + label {
+				background: $checkedBoxColor;
+				border-color: $checkedBoxColor;
+				transition: 0.7s;
+				
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.WeatherAttributeCheckbox {
+		margin: 0 16px;
+	}
+}

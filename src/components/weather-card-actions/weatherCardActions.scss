@@ -1,0 +1,23 @@
+
+.WeatherCardActions {
+	align-items: center;
+	color: #f5f9fa;
+	display: flex;
+	justify-content: flex-end;
+	position: absolute;
+	right: 19px;
+	top: 12px;
+	
+	&__filterButton, &__deleteButton {
+		font-size: 20px;
+	}
+	
+	&__filterButton {
+		margin-right: 8px;
+	}
+	
+	&__modalBody {
+		margin-bottom: 92px;
+		margin-top: 32px;
+	}
+}

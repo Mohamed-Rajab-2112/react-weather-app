@@ -1,0 +1,57 @@
+@import 'theme/colors.scss';
+@import 'theme/mixins.scss';
+@import 'theme/breakpoints.scss';
+
+.Header {
+	align-items: center;
+	background: #1c4658;
+	box-shadow: inset 0px -1px 0px #498187;
+	display: flex;
+	justify-content: space-between;
+	padding: 12px percentage(56/1280);
+	
+	&__title {
+		color: $light;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 120%;
+	}
+	
+	&__searchContainer {
+		align-items: center;
+		display: flex;
+	}
+	
+	&__refresh {
+		@include primaryButton;
+		margin-left: 8px;
+		width: 130px;
+	}
+	
+	&__refreshText {
+		margin-left: 11px;
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.Header {
+		flex-direction: column;
+		
+		&__title {
+			margin-bottom: 25px;
+		}
+	}
+}
+
+@media screen and (max-width: $mobile) {
+	.Header {
+		&__searchContainer {
+			flex-direction: column;
+		}
+		
+		&__refresh {
+			margin-top: 20px;
+		}
+	}
+}

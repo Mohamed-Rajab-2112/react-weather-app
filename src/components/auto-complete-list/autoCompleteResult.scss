@@ -1,0 +1,47 @@
+@import 'theme/colors';
+
+.AutoCompleteResult {
+	background-color: $light;
+	border-radius: 10px;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+	box-sizing: border-box;
+	margin: 0;
+	padding: 7px;
+	position: absolute;
+	top: 40px;
+	width: 100%;
+	z-index: 1;
+	
+	&__citiesList {
+		margin: 0;
+		padding: 0;
+	}
+	
+	&__city {
+		border-radius: 5px;
+		cursor: pointer;
+		list-style: none;
+		padding: 5px;
+		transition: 0.3s;
+		
+		&:hover {
+			background-color: #ddd;
+			transition: 0.3s;
+		}
+	}
+	
+	&__cityName {
+		font-size: 1em;
+		font-weight: bold;
+		margin: 0;
+	}
+	
+	&__countryAndGov {
+		color: grey;
+		font-size: 0.9em;
+	}
+	
+	&__error {
+		text-align: center;
+	}
+}
