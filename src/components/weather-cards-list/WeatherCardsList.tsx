@@ -1,6 +1,6 @@
 import WeatherCard from "components/weather-card/WeatherCard"
 import React, {useEffect} from 'react'
-import {getCityWeather} from "store/features/weather/weatherSlice"
+import {getCityWeather} from "store/features/weather/asyncActions"
 import {useAppDispatch, useAppSelector} from "store/hooks"
 import {RootState} from "store/store"
 import './weatherCardsList.scss'
@@ -33,8 +33,9 @@ const WeatherCardsList = () => {
 	return (
 		<div className="WeatherCardsList">
 			{
-				citiesWeather.length ? citiesWeather.map(weather => <WeatherCard
+				citiesWeather.length ? citiesWeather.map((weather, index) => <WeatherCard
 						key={weather.id}
+						index={index}
 						weather={weather} />)
 					:
 					<p className="WeatherCardsList__emptyState">Search for a city to see its weather info here!</p>

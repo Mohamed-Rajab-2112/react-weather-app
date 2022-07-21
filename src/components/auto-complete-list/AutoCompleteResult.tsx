@@ -1,5 +1,5 @@
 import 'components/auto-complete-list/autoCompleteResult.scss'
-import {getCityWeather} from "store/features/weather/weatherSlice"
+import {getCityWeather} from "store/features/weather/asyncActions"
 import {useAppDispatch} from "store/hooks"
 
 export interface IAutoCompleteCity {

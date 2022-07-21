@@ -14,12 +14,15 @@ const WeatherAttributeCheckbox = ({checked, name, label, handleOnChange}: Weathe
 		<div className="WeatherAttributeCheckbox">
 			<div className="WeatherAttributeCheckbox__checkbox">
 				<input
+					className="WeatherAttributeCheckbox__checkboxInput"
 					id={name}
 					type="checkbox"
 					checked={checked}
 					onChange={() => handleOnChange(name)}
 					name={name} />
-				<label htmlFor={name}></label>
+				<label
+					className="WeatherAttributeCheckbox__checkboxLabel"
+					htmlFor={name}></label>
 			</div>
 			<label
 				htmlFor={name}

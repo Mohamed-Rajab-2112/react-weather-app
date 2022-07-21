@@ -1,68 +1,38 @@
-import {IconDefinition} from "@fortawesome/fontawesome-common-types"
-import {faCloud, faCloudShowersWater, faSnowflake, faSun} from "@fortawesome/free-solid-svg-icons"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import Error from "components/Error/Error"
 import WeatherCardActions from "components/weather-card-actions/WeatherCardActions"
-import WeatherCardExtraData from "components/weather-card-extra-data/WeatherCardExtraData"
-import React from "react"
-import {getCityWeather, ICityWeather} from "store/features/weather/weatherSlice"
-import {useAppDispatch} from "store/hooks"
+import WeatherCardBody from "components/weather-card-body/WeatherCardBody"
+import {useHandleHover} from "hooks/useHandleHover"
+import React, {useRef} from "react"
+import {useDrag} from "react-dnd"
+import {ICityWeather} from "store/features/weather/weatherSlice"
 import './weatherCard.scss'
 
-enum WeatherStates {
-	snow = 'snow',
-	clouds = 'clouds',
-	rain = 'rain'
-}
+const dragType = "WeatherCard"
 
 const WeatherCard = ({
-	weather
-}: { weather: ICityWeather }) => {
+	weather,
+	index
+}: { weather: ICityWeather, index: number }) => {
 	
-	const dispatch = useAppDispatch()
+	const ref = useRef(null)
+	const {drop} = useHandleHover(index, ref)
 	
-	const pickWeatherIcon = (tempDescr: string): IconDefinition => {
-		switch (tempDescr.toLowerCase()) {
-			case WeatherStates.snow:
-				return faSnowflake
-			case WeatherStates.clouds:
-				return faCloud
-			case WeatherStates.rain:
-				return faCloudShowersWater
-			default:
-				return faSun
-		}
-	}
+	const [, drag] = useDrag(() => ({
+		type: dragType,
+		item: {id: weather.id, index},
+		collect: (monitor) => ({
+			isDragging: Boolean(monitor.isDragging())
+		})
+	}), [index])
 	
-	const retryHandler = () => {
-		dispatch(getCityWeather(weather))
-	}
-	
-	const renderCardBody = () => <>
-		<h1 className="WeatherCard__temp">{weather?.temp}</h1>
-		<FontAwesomeIcon
-			className="WeatherCard__icon"
-			icon={pickWeatherIcon(weather?.tempDescr as string)} />
-		<h2 className="WeatherCard__weatherDescription">{weather?.tempDescr}</h2>
-		<WeatherCardExtraData weather={weather} />
-	</>
+	drag(drop(ref))
 	
 	return (
-		<div className="WeatherCard">
+		<div
+			ref={ref}
+			className="WeatherCard">
 			<WeatherCardActions weather={weather} />
 			<h3 className="WeatherCard__name">{weather.name}</h3>
-			{
-				weather.isLoading ?
-					<p className="WeatherCard__loading">loading...</p>
-					:
-					weather.isError ?
-						<Error
-							errorMessage={weather.errorMessage as string}
-							containerStyleClass="WeatherCard__error"
-							retryHandler={retryHandler} />
-						:
-						renderCardBody()
-			}
+			<WeatherCardBody weather={weather} />
 		</div>
 	)
 }
