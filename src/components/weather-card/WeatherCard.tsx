@@ -1,6 +1,6 @@
 import WeatherCardActions from "components/weather-card-actions/WeatherCardActions"
 import WeatherCardBody from "components/weather-card-body/WeatherCardBody"
-import {useHandleHover} from "hooks/useHandleHover"
+import {useHandleDrop} from "hooks/useHandleDrop"
 import React, {useRef} from "react"
 import {useDrag} from "react-dnd"
 import {ICityWeather} from "store/features/weather/weatherSlice"
@@ -14,7 +14,7 @@ const WeatherCard = ({
 }: { weather: ICityWeather, index: number }) => {
 	
 	const ref = useRef(null)
-	const {drop} = useHandleHover(index, ref, dragType)
+	const [drop] = useHandleDrop(index, ref, dragType)
 	
 	const [, drag] = useDrag(() => ({
 		type: dragType,

@@ -5,7 +5,7 @@ import {useAppDispatch} from "store/hooks"
 
 type DragItemType = { id: string, index: number }
 
-const useHandleHover = (index: number, ref: RefObject<DocumentFragment>, type: string) => {
+const useHandleDrop = (index: number, ref: RefObject<DocumentFragment>, type: string) => {
 	const dispatch = useAppDispatch()
 	
 	const [, drop] = useDrop(() => ({
@@ -28,7 +28,7 @@ const useHandleHover = (index: number, ref: RefObject<DocumentFragment>, type: s
 		})
 		, [index])
 	
-	return {drop}
+	return [drop]
 }
 
-export {useHandleHover}
+export {useHandleDrop}
