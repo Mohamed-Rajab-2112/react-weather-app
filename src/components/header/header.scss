@@ -32,20 +32,18 @@
 	&__refreshText {
 		margin-left: 11px;
 	}
-}
-
-@media screen and (max-width: $tablet) {
-	.Header {
-		flex-direction: column;
+	
+	@media screen and (max-width: $tablet) {
+		& {
+			flex-direction: column;
+		}
 		
 		&__title {
 			margin-bottom: 25px;
 		}
 	}
-}
-
-@media screen and (max-width: $mobile) {
-	.Header {
+	
+	@media screen and (max-width: $mobile) {
 		&__searchContainer {
 			flex-direction: column;
 		}

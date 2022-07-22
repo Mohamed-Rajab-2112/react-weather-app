@@ -22,7 +22,7 @@ const AutoCompleteInput = () => {
 				setAutoCompleteCities(reformatLocationApiResults(apiCities))
 				setAutoCompleteError('')
 			} catch (error) {
-				setAutoCompleteError('Error Occurred, please try again later!')
+				setAutoCompleteError('error Occurred, please try again later!')
 			}
 		} else {
 			clearSearch()

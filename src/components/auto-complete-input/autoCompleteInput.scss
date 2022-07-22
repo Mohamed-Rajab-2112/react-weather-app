@@ -53,20 +53,18 @@
 		top: 50%;
 		transform: translate(0, -50%);
 	}
-}
-
-@media screen and (max-width: $tablet) {
-	.AutoCompleteInput {
-		flex-direction: column;
+	
+	@media screen and (max-width: $tablet) {
+		& {
+			flex-direction: column;
+		}
 		
 		&__searchInput {
 			width: 200px;
 		}
 	}
-}
-
-@media screen and (max-width: $mobile) {
-	.AutoCompleteInput {
+	
+	@media screen and (max-width: $mobile) {
 		&__searchInput {
 			width: 250px;
 		}

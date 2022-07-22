@@ -5,13 +5,11 @@ import {useAppDispatch} from "store/hooks"
 
 type DragItemType = { id: string, index: number }
 
-const dragType = "WeatherCard"
-
-const useHandleHover = (index: number, ref: RefObject<DocumentFragment>) => {
+const useHandleHover = (index: number, ref: RefObject<DocumentFragment>, type: string) => {
 	const dispatch = useAppDispatch()
 	
 	const [, drop] = useDrop(() => ({
-			accept: dragType,
+			accept: type,
 			hover: (item: DragItemType) => {
 				if (!ref.current) {
 					return

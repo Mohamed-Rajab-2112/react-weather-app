@@ -16,17 +16,17 @@
 		font-weight: normal;
 		margin-top: 50px;
 	}
-}
-
-@media screen and (max-width: $tablet) {
-	.WeatherCardsList {
-		justify-items: center;
+	
+	@media screen and (max-width: $tablet) {
+		& {
+			justify-items: center;
+		}
 	}
-}
-
-@media screen and (max-width: $mobile) {
-	.WeatherCardsList {
-		grid-template-columns: auto;
-		margin: 24px 20px 0;
+	
+	@media screen and (max-width: $mobile) {
+		& {
+			grid-template-columns: auto;
+			margin: 24px 20px 0;
+		}
 	}
 }

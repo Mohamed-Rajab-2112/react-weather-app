@@ -51,11 +51,8 @@
 		line-height: 40px;
 		padding-bottom: 12px;
 	}
-}
-
-@media screen and (max-width: $tablet) {
-	.Modal {
-		
+	
+	@media screen and (max-width: $tablet) {
 		&__header {
 			margin: 0 16px;
 		}

@@ -14,7 +14,7 @@ const WeatherCard = ({
 }: { weather: ICityWeather, index: number }) => {
 	
 	const ref = useRef(null)
-	const {drop} = useHandleHover(index, ref)
+	const {drop} = useHandleHover(index, ref, dragType)
 	
 	const [, drag] = useDrag(() => ({
 		type: dragType,
@@ -31,7 +31,6 @@ const WeatherCard = ({
 			ref={ref}
 			className="WeatherCard">
 			<WeatherCardActions weather={weather} />
-			<h3 className="WeatherCard__name">{weather.name}</h3>
 			<WeatherCardBody weather={weather} />
 		</div>
 	)

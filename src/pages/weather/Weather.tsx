@@ -3,15 +3,20 @@ import WeatherCardsList from 'components/weather-cards-list/WeatherCardsList'
 import {BackendFactory} from "dnd-core"
 import {DndProvider} from "react-dnd"
 import {HTML5Backend} from "react-dnd-html5-backend"
-import {TouchBackend} from "react-dnd-touch-backend"
 import './weather.scss'
 
-const isTouchDevice = () => {
-	return "ontouchstart" in window
-	
-}
+let backendForDND: BackendFactory = HTML5Backend
 
-const backendForDND: BackendFactory = isTouchDevice() ? TouchBackend : HTML5Backend
+// drag and drop behaviour not ux friendly on touch screens, so I commented it.
+// uncomment next lines to enable drag and drop on touch screens
+
+// const isTouchDevice = () => {
+// 	return "ontouchstart" in window
+// }
+
+// if (isTouchDevice()) {
+// 	backendForDND = TouchBackend
+// }
 
 const Weather = () => {
 	return (

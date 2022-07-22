@@ -11,7 +11,7 @@ export const getCityWeather = createAsyncThunk<ICityWeather, ICityWeather, { rej
 			thunkAPI.dispatch(addWeather(city))
 			return await getWeatherByCityId({id: city.id})
 		} catch (error) {
-			let errorMessage = 'Unexpected Error, Please try again.'
+			let errorMessage = 'Unexpected error, Please try again.'
 			if (axios.isAxiosError(error)) {
 				errorMessage = error.message
 			}

@@ -1,7 +1,6 @@
 
 .WeatherCardActions {
 	align-items: center;
-	color: #f5f9fa;
 	display: flex;
 	justify-content: flex-end;
 	position: absolute;
@@ -9,6 +8,7 @@
 	top: 12px;
 	
 	&__filterButton, &__deleteButton {
+		color: #f5f9fa;
 		font-size: 20px;
 	}
 	

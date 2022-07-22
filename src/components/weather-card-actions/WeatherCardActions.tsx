@@ -27,19 +27,6 @@ const WeatherCardActions = ({weather}: WeatherCardActionsProps) => {
 		setIsModalOpen(false)
 	}
 	
-	// const modalActionButtons: ActionButtonType[] = [
-	// 	{
-	// 		name: 'Cancel',
-	// 		styleClass: 'secondary',
-	// 		callback: closeEditModal
-	// 	},
-	// 	{
-	// 		name: 'Apply',
-	// 		styleClass: 'primary',
-	// 		callback: () => dispatch(editWeather)
-	// 	}
-	// ]
-	
 	return (
 		<div className="WeatherCardActions">
 			<button
@@ -57,8 +44,6 @@ const WeatherCardActions = ({weather}: WeatherCardActionsProps) => {
 				isOpen={isModalOpen}
 				closeModal={closeEditModal}
 				title="Select Fields to Display"
-				// bodyStyleClass="WeatherCardActions__modalBody"
-				// actionButtons={modalActionButtons}
 			>
 				<ToggleWeatherAttributesForm
 					onCancel={closeEditModal}

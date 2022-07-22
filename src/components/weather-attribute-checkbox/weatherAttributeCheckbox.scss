@@ -83,7 +83,7 @@ $uncheckedBoxColor: #93a5b1;
 }
 
 @media screen and (max-width: $tablet) {
-	.WeatherAttributeCheckbox {
+	& {
 		margin: 0 16px;
 	}
 }
