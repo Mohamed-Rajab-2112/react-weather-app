@@ -15,6 +15,8 @@
 - Unit test included for auto complete input feature as example for unit and integration tests.
 - App is complete responsive for desktop, tablet and mobile.
 - The app created as multi layered so model layer is separate from business logic and ui layer.
+- errors handled gently
+- retry feature when network error
 
 ### Available Scripts
 
