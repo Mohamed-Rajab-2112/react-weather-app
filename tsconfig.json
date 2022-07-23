@@ -18,18 +18,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "no-console": [
-      true
-    ],
-    "indent": [
-      true,
-      "tabs",
-      1
-    ],
     "baseUrl": "src",
     "jsx": "react-jsx"
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "cypress"
   ]
 }

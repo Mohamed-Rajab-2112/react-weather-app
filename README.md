@@ -11,7 +11,7 @@
 
 - Debounced api calls for auto complete so, no throttle for the back end server.
 - memoize weather ui so minimum render iteration to keep the performance high.
-- components is very chunky for better render performance and maintaince.
+- components are very chunky for better render performance and maintained.
 - Unit test included for auto complete input feature as example for unit and integration tests.
 - App is complete responsive for desktop, tablet and mobile.
 - The app created as multi layered so model layer is separate from business logic and ui layer.
